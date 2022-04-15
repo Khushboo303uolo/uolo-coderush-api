@@ -6,7 +6,7 @@ const History = require('../src/models/history');
 //handle get request
 router.get("/", async(req,res)=>{
 try {
-    const getHistory = await History.find({}).sort({'numberOfChances':-1});
+    const getHistory = await History.find({}).sort({'numberOfChances':1});
     res.send(getHistory);
 } catch (error) {
     res.status(400).send(error);
